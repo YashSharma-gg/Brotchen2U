@@ -58,7 +58,16 @@ class _HomePageState extends State<HomePage> {
       duration: const Duration(milliseconds: 300),
       color: Colors.white,
       child: Scaffold(
-        
+        // Navigation Bar
+        bottomNavigationBar: BottomNavigationBar(
+          
+          selectedItemColor: Colors.orange[500],
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'  ),
+            BottomNavigationBarItem(icon: Icon(Icons.favorite_outline),label: 'Favourites'  ),
+            BottomNavigationBarItem(icon: Icon(Icons.list_alt), label: 'WishList'  ),
+          ],
+        ),
         resizeToAvoidBottomInset: false,
         body: SingleChildScrollView(
           child: Column(
@@ -156,8 +165,119 @@ class _HomePageState extends State<HomePage> {
                   fontWeight: FontWeight.bold)),))
                   )
                 ],
-              )
-              
+              ),
+              const SizedBox(height: 20,),
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Container(alignment: Alignment.centerLeft,child: Text('Categories', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.grey[600], fontSize: 20,) ),)),
+              ),
+              const SizedBox(height: 10,),
+              // Categories
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height/14,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Card(
+                      color: Colors.amber,
+                      elevation: 5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.5,
+                        
+                      ),
+                    ),
+                    Card(
+                      color: Colors.red,
+                      elevation: 5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.5,
+                        
+                      ),
+                    ),
+                    Card(
+                      color: Colors.green,
+                      elevation: 5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.5,
+                        
+                      ),
+                    ),
+                    Card(
+                      color: Colors.grey,
+                      elevation: 5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.5,
+                        
+                      ),
+                    ),
+                    Card(
+                      color: Colors.orange,
+                      elevation: 5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.5,
+                        
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20,),
+              Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: Container(alignment: Alignment.centerLeft,child: Text('Most Consumed', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.grey[600], fontSize: 20,) ),)),
+                ),
+              const SizedBox(height: 10,),
+              // Most Consumed
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height/4,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Card(
+                      color: Colors.amber,
+                      elevation: 5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.2,
+                        
+                      ),
+                    ),
+                    Card(
+                      color: Colors.red,
+                      elevation: 5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.2,
+                        
+                      ),
+                    ),
+                    Card(
+                      color: Colors.green,
+                      elevation: 5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.2,
+                        
+                      ),
+                    ),
+                    Card(
+                      color: Colors.grey,
+                      elevation: 5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.2,
+                        
+                      ),
+                    ),
+                    Card(
+                      color: Colors.orange,
+                      elevation: 5,
+                      child: Container(
+                        width: MediaQuery.of(context).size.width/2.2,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
               
             ],
           ),
