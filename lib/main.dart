@@ -1,10 +1,11 @@
+import 'package:brotchen2u/category_page.dart';
 import 'package:flutter/material.dart';
-
+import 'category_page.dart';
 import 'drawer_page.dart';
 import 'home_page.dart';
 
 void main(List<String> args) {
-  runApp(const MaterialApp(home: HomeScreen()));
+  runApp(const MaterialApp(home: HomePage()));
 }
 
 class HomeScreen extends StatelessWidget {
@@ -17,6 +18,7 @@ class HomeScreen extends StatelessWidget {
         children: const <Widget>[
           DrawerPage(),
           HomePage(),
+
         ],
       ),
     );
