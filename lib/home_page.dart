@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                 
                 // Spacing
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 
                 // AppBar

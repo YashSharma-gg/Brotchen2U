@@ -30,7 +30,7 @@ class _CategoryPageState extends State<CategoryPage> {
           body: SingleChildScrollView(
             child: Column(
               children:  [
-                const SizedBox(height: 10,),
+                const SizedBox(height: 20,),
                
                 // App Bar
                 Row(
