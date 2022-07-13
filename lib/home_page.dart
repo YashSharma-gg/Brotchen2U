@@ -68,6 +68,35 @@ class _HomePageState extends State<HomePage> {
       color: Colors.white,
       child: SafeArea(
         child: Scaffold(
+          // appBar: AppBar(
+          //   iconTheme: IconThemeData(color: Colors.grey),
+          //     backgroundColor: Colors.white,
+          //     title: Container(
+          //         margin: const EdgeInsets.symmetric(horizontal: 5),
+          //         child: Row(
+          //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //           children: [
+          //             const SizedBox(width: 1,),
+                      
+          //             Text('Location',
+          //                 style: GoogleFonts.lato(
+          //                     textStyle: const TextStyle(
+          //                         color: Colors.black54,
+          //                         fontWeight: FontWeight.bold,
+          //                         fontSize: 18))),
+                      
+          //             IconButton(
+          //                 onPressed: () {},
+          //                 icon: const Icon(
+          //                   Icons.shopping_cart,
+          //                   color: Colors.grey,
+          //                 ))
+          //           ],
+          //         ),
+          //       ),
+          // ),
+          // drawer: Drawer(),
+          // drawerScrimColor: Colors.grey,
           // Navigation Bar
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: Colors.orange[500],
@@ -93,31 +122,8 @@ class _HomePageState extends State<HomePage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      isDrawerOpen
-                          ? IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  xOffset = 0;
-                                  yOffset = 0;
-                                  scaleFactor = 1;
-                                  isDrawerOpen = false;
-                                });
-                              },
-                              icon: const Icon(Icons.arrow_back))
-                          : IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  xOffset = 250;
-                                  yOffset = 150;
-                                  scaleFactor = 0.6;
-                                  isDrawerOpen = true;
-                                });
-                              },
-                              icon: const Icon(
-                                Icons.menu,
-                                color: Colors.grey,
-                                size: 30,
-                              )),
+                      SizedBox(width: 60,),
+                      
                       Text('Location',
                           style: GoogleFonts.lato(
                               textStyle: const TextStyle(
