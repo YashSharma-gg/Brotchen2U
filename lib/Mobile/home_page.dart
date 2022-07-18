@@ -61,632 +61,626 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double widthS = MediaQuery.of(context).size.width;
 
-    return AnimatedContainer(
-      transform: Matrix4.translationValues(xOffset, yOffset, 0)
-        ..scale(scaleFactor),
-      duration: const Duration(milliseconds: 300),
-      color: Colors.white,
-      child: SafeArea(
-        child: Scaffold(
-          // appBar: AppBar(
-          //   iconTheme: IconThemeData(color: Colors.grey),
-          //     backgroundColor: Colors.white,
-          //     title: Container(
-          //         margin: const EdgeInsets.symmetric(horizontal: 5),
-          //         child: Row(
-          //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //           children: [
-          //             const SizedBox(width: 1,),
-                      
-          //             Text('Location',
-          //                 style: GoogleFonts.lato(
-          //                     textStyle: const TextStyle(
-          //                         color: Colors.black54,
-          //                         fontWeight: FontWeight.bold,
-          //                         fontSize: 18))),
-                      
-          //             IconButton(
-          //                 onPressed: () {},
-          //                 icon: const Icon(
-          //                   Icons.shopping_cart,
-          //                   color: Colors.grey,
-          //                 ))
-          //           ],
-          //         ),
-          //       ),
-          // ),
-          // drawer: Drawer(),
-          // drawerScrimColor: Colors.grey,
-          // Navigation Bar
-          bottomNavigationBar: BottomNavigationBar(
-            selectedItemColor: Colors.orange[500],
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite_outline), label: 'Favourites'),
-            ],
-          ),
-          resizeToAvoidBottomInset: false,
-          body: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                
-                // Spacing
-                const SizedBox(
-                  height: 20,
+    return SafeArea(
+      child: Scaffold(
+        // appBar: AppBar(
+        //   iconTheme: IconThemeData(color: Colors.grey),
+        //     backgroundColor: Colors.white,
+        //     title: Container(
+        //         margin: const EdgeInsets.symmetric(horizontal: 5),
+        //         child: Row(
+        //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //           children: [
+        //             const SizedBox(width: 1,),
+                    
+        //             Text('Location',
+        //                 style: GoogleFonts.lato(
+        //                     textStyle: const TextStyle(
+        //                         color: Colors.black54,
+        //                         fontWeight: FontWeight.bold,
+        //                         fontSize: 18))),
+                    
+        //             IconButton(
+        //                 onPressed: () {},
+        //                 icon: const Icon(
+        //                   Icons.shopping_cart,
+        //                   color: Colors.grey,
+        //                 ))
+        //           ],
+        //         ),
+        //       ),
+        // ),
+        // drawer: Drawer(),
+        // drawerScrimColor: Colors.grey,
+        // Navigation Bar
+        bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.orange[500],
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.favorite_outline), label: 'Favourites'),
+          ],
+        ),
+        resizeToAvoidBottomInset: false,
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              
+              // Spacing
+              const SizedBox(
+                height: 20,
+              ),
+              
+              // AppBar
+              Container(
+                margin: const EdgeInsets.symmetric(horizontal: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(width: 60,),
+                    
+                    Text('Location',
+                        style: GoogleFonts.lato(
+                            textStyle: const TextStyle(
+                                color: Colors.black54,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18))),
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.shopping_cart,
+                          color: Colors.grey,
+                        ))
+                  ],
                 ),
-                
-                // AppBar
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(width: 60,),
-                      
-                      Text('Location',
-                          style: GoogleFonts.lato(
-                              textStyle: const TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18))),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.shopping_cart,
-                            color: Colors.grey,
-                          ))
-                    ],
-                  ),
-                ),
-                
-                // Spacing
-                const SizedBox(
-                  height: 20,
-                ),
-               
-                // Search Bar
-                Container(
-                  height: 50,
-                  width: widthS * 0.95,
-                  decoration: BoxDecoration(
-                      color: Colors.blueGrey[100],
-                      borderRadius: BorderRadius.circular(20)),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      hintText: 'Search "Bread"',
-                      hintStyle: GoogleFonts.lato(
-                          textStyle: const TextStyle(
-                              color: Colors.black38,
-                              fontWeight: FontWeight.bold)),
-                      prefixIcon: const Icon(Icons.search),
-                      prefixIconColor: Colors.black54,
-                      contentPadding: EdgeInsets.symmetric(
-                        vertical: MediaQuery.of(context).size.height / 50,
-                      ),
+              ),
+              
+              // Spacing
+              const SizedBox(
+                height: 20,
+              ),
+             
+              // Search Bar
+              Container(
+                height: 50,
+                width: widthS * 0.95,
+                decoration: BoxDecoration(
+                    color: Colors.blueGrey[100],
+                    borderRadius: BorderRadius.circular(20)),
+                child: TextField(
+                  decoration: InputDecoration(
+                    enabledBorder: InputBorder.none,
+                    focusedBorder: InputBorder.none,
+                    hintText: 'Search "Bread"',
+                    hintStyle: GoogleFonts.lato(
+                        textStyle: const TextStyle(
+                            color: Colors.black38,
+                            fontWeight: FontWeight.bold)),
+                    prefixIcon: const Icon(Icons.search),
+                    prefixIconColor: Colors.black54,
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: MediaQuery.of(context).size.height / 50,
                     ),
                   ),
                 ),
-                
-                // Spacing
-                const SizedBox(
-                  height: 30,
-                ),
-                
-                // Carousel
-                Stack(
+              ),
+              
+              // Spacing
+              const SizedBox(
+                height: 30,
+              ),
+              
+              // Carousel
+              Stack(
+                children: [
+                  CarouselSlider(
+                      items: generateTiles(),
+                      options: CarouselOptions(
+                          enlargeCenterPage: true,
+                          autoPlay: true,
+                          aspectRatio: 12 / 7,
+                          onPageChanged: (index, other) {
+                            setState(() {
+                              _current = index;
+                            });
+                          })),
+                  AspectRatio(
+                      aspectRatio: 12 / 7,
+                      child: Center(
+                          child: Text(
+                        names[_current],
+                        style: GoogleFonts.lato(
+                            textStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize:
+                                    MediaQuery.of(context).size.width / 20,
+                                fontWeight: FontWeight.bold)),
+                      )))
+                ],
+              ),
+              
+              // Spacing
+              const SizedBox(
+                height: 20,
+              ),
+              
+              // Categories
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Categories',
+                      style: GoogleFonts.lato(
+                          textStyle: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 20,
+                      )),
+                    )),
+              ),
+              
+              // Spacing
+              const SizedBox(
+                height: 10,
+              ),
+              
+              // Categories Names
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 14,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: [
-                    CarouselSlider(
-                        items: generateTiles(),
-                        options: CarouselOptions(
-                            enlargeCenterPage: true,
-                            autoPlay: true,
-                            aspectRatio: 12 / 7,
-                            onPageChanged: (index, other) {
-                              setState(() {
-                                _current = index;
-                              });
-                            })),
-                    AspectRatio(
-                        aspectRatio: 12 / 7,
-                        child: Center(
-                            child: Text(
-                          names[_current],
-                          style: GoogleFonts.lato(
-                              textStyle: TextStyle(
-                                  color: Colors.white,
-                                  fontSize:
-                                      MediaQuery.of(context).size.width / 20,
-                                  fontWeight: FontWeight.bold)),
-                        )))
+                    Card(
+                      elevation: 5,
+                      child: InkWell(
+                        onTap: (){
+                          
+                        },
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          child: Row(
+                            children : [
+                              const Icon(Icons.star),
+                              const SizedBox(width: 8,),
+                              Text('Category 1', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)
+                            ]
+                          ),
+                        ),
+                      ),
+                    ),
+                    Card(
+                      elevation: 5,
+                      child: InkWell(
+                        onTap: (){},
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          child: Row(
+                            children : [
+                              const Icon(Icons.star),
+                              const SizedBox(width: 8,),
+                              Text('Category 2', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)
+                            ]
+                          ),
+                        ),
+                      ),
+                    ),
+                    Card(
+                      elevation: 5,
+                      child: InkWell(
+                        onTap: (){},
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          child: Row(
+                            children : [
+                              const Icon(Icons.star),
+                              const SizedBox(width: 8,),
+                              Text('Category 3', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)
+                            ]
+                          ),
+                        ),
+                      ),
+                    ),
+                    Card(
+                      elevation: 5,
+                      child: InkWell(
+                        onTap: (){},
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          child: Row(
+                            children : [
+                              const Icon(Icons.star),
+                              const SizedBox(width: 8,),
+                              Text('Category 4', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)
+                            ]
+                          ),
+                        ),
+                      ),
+                    ),
+                    Card(
+                      elevation: 5,
+                      child: InkWell(
+                        onTap: (){},
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width / 2.5,
+                          child: Row(
+                            children : [
+                              const Icon(Icons.star),
+                              const SizedBox(width: 8,),
+                              Text('Category 5', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)
+                            ]
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-                
-                // Spacing
-                const SizedBox(
-                  height: 20,
-                ),
-                
-                // Categories
-                Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: Container(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Categories',
-                        style: GoogleFonts.lato(
-                            textStyle: TextStyle(
-                          color: Colors.grey[600],
-                          fontSize: 20,
-                        )),
+              ),
+              
+              // Spacing
+              const SizedBox(
+                height: 20,
+              ),
+             
+              // Most Consumed title
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Most Consumed',
+                      style: GoogleFonts.lato(
+                          textStyle: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 20,
                       )),
-                ),
-                
-                // Spacing
-                const SizedBox(
-                  height: 10,
-                ),
-                
-                // Categories Names
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 14,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Card(
-                        elevation: 5,
-                        child: InkWell(
-                          onTap: (){
-                            
-                          },
-                          child: SizedBox(
-                            width: MediaQuery.of(context).size.width / 2.5,
-                            child: Row(
-                              children : [
-                                const Icon(Icons.star),
-                                const SizedBox(width: 8,),
-                                Text('Category 1', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)
-                              ]
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 5,
-                        child: InkWell(
-                          onTap: (){},
-                          child: SizedBox(
-                            width: MediaQuery.of(context).size.width / 2.5,
-                            child: Row(
-                              children : [
-                                const Icon(Icons.star),
-                                const SizedBox(width: 8,),
-                                Text('Category 2', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)
-                              ]
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 5,
-                        child: InkWell(
-                          onTap: (){},
-                          child: SizedBox(
-                            width: MediaQuery.of(context).size.width / 2.5,
-                            child: Row(
-                              children : [
-                                const Icon(Icons.star),
-                                const SizedBox(width: 8,),
-                                Text('Category 3', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)
-                              ]
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 5,
-                        child: InkWell(
-                          onTap: (){},
-                          child: SizedBox(
-                            width: MediaQuery.of(context).size.width / 2.5,
-                            child: Row(
-                              children : [
-                                const Icon(Icons.star),
-                                const SizedBox(width: 8,),
-                                Text('Category 4', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)
-                              ]
-                            ),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        elevation: 5,
-                        child: InkWell(
-                          onTap: (){},
-                          child: SizedBox(
-                            width: MediaQuery.of(context).size.width / 2.5,
-                            child: Row(
-                              children : [
-                                const Icon(Icons.star),
-                                const SizedBox(width: 8,),
-                                Text('Category 5', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)
-                              ]
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                
-                // Spacing
-                const SizedBox(
-                  height: 20,
-                ),
-               
-                // Most Consumed title
-                Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: Container(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Most Consumed',
-                        style: GoogleFonts.lato(
-                            textStyle: TextStyle(
-                          color: Colors.grey[600],
-                          fontSize: 20,
-                        )),
-                      )),
-                ),
-               
-                // Spacing
-                const SizedBox(
-                  height: 10,
-                ),
-               
-                // Most Consumed products
-                SizedBox(       
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 3.5,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Card(
-                        elevation: 8,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(4),
-                                      topRight: Radius.circular(3)),
-                                ),
-                                width: MediaQuery.of(context).size.width / 2.3,
-                                height:
-                                    0.75 * MediaQuery.of(context).size.height / 4,
-                                child: Image.network(
-                                  'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
-                                  fit: BoxFit.cover,
-                                  isAntiAlias: true,
-                                ),
+                    )),
+              ),
+             
+              // Spacing
+              const SizedBox(
+                height: 10,
+              ),
+             
+              // Most Consumed products
+              SizedBox(       
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height / 3.5,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Card(
+                      elevation: 8,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5.0),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(4),
+                                    topRight: Radius.circular(3)),
+                              ),
+                              width: MediaQuery.of(context).size.width / 2.3,
+                              height:
+                                  0.75 * MediaQuery.of(context).size.height / 4,
+                              child: Image.network(
+                                'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
+                                fit: BoxFit.cover,
+                                isAntiAlias: true,
                               ),
                             ),
-                            const SizedBox(
-                              height: 6,
-                            ),
-                            Container(
-                              color: Colors.white,
-                              width: MediaQuery.of(context).size.width / 2.2,
-                              height:
-                                  0.25 * MediaQuery.of(context).size.height / 4,
-                              child: Row(
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Container(
+                            color: Colors.white,
+                            width: MediaQuery.of(context).size.width / 2.2,
+                            height:
+                                0.25 * MediaQuery.of(context).size.height / 4,
+                            child: Row(
+                              
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
                                 
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                children: [
-                                  
-                                  Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Bread',
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 15))),
-                                      Text('Toast and Jam',
-                                          style: GoogleFonts.lato(
-                                              textStyle: TextStyle(
-                                                  color: Colors.grey[600],
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 10))),
-                                      Text('499 only',
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 10))),
-                                    ],
-                                  ),
-      
-                                  // Alternate Like button using IconButton. It is a bit slower
-                                  // isLiked
-                                  //      IconButton(
-                                  //         onPressed: () {
-                                  //           setState(() {
-                                  //             isLiked = false;
-                                  //           });
-                                  //         },
-                                  //         icon: const Icon(
-                                  //           Icons.favorite_rounded,
-                                  //           color: Colors.red,
-                                  //         ))
-                                  //     : IconButton(
-                                  //         onPressed: () {
-                                  //           isLiked = true;
-                                  //         },
-                                  //         icon: const Icon(
-                                  //             Icons.favorite_outline_rounded)),
-                                  (isLiked[0]==0? false : true) ? InkWell(onTap: (){
-                                    setState(() {
-                                      isLiked[0] = 0;
-                                    });
-                                  },
-                                  child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
-                                  InkWell(onTap: (){
-                                    setState(() {
-                                      isLiked[0] = 1;
-                                    });
-                                  },
-                                  child: const Icon(Icons.favorite_outline_rounded,),)
-                                ],
-                              ),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Bread',
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15))),
+                                    Text('Toast and Jam',
+                                        style: GoogleFonts.lato(
+                                            textStyle: TextStyle(
+                                                color: Colors.grey[600],
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 10))),
+                                    Text('499 only',
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 10))),
+                                  ],
+                                ),
+    
+                                // Alternate Like button using IconButton. It is a bit slower
+                                // isLiked
+                                //      IconButton(
+                                //         onPressed: () {
+                                //           setState(() {
+                                //             isLiked = false;
+                                //           });
+                                //         },
+                                //         icon: const Icon(
+                                //           Icons.favorite_rounded,
+                                //           color: Colors.red,
+                                //         ))
+                                //     : IconButton(
+                                //         onPressed: () {
+                                //           isLiked = true;
+                                //         },
+                                //         icon: const Icon(
+                                //             Icons.favorite_outline_rounded)),
+                                (isLiked[0]==0? false : true) ? InkWell(onTap: (){
+                                  setState(() {
+                                    isLiked[0] = 0;
+                                  });
+                                },
+                                child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
+                                InkWell(onTap: (){
+                                  setState(() {
+                                    isLiked[0] = 1;
+                                  });
+                                },
+                                child: const Icon(Icons.favorite_outline_rounded,),)
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                      Card(
-                        elevation: 8,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(4),
-                                      topRight: Radius.circular(3)),
-                                ),
-                                width: MediaQuery.of(context).size.width / 2.3,
-                                height:
-                                    0.75 * MediaQuery.of(context).size.height / 4,
-                                child: Image.network(
-                                  'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
-                                  fit: BoxFit.cover,
-                                  isAntiAlias: true,
-                                ),
+                    ),
+                    Card(
+                      elevation: 8,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5.0),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(4),
+                                    topRight: Radius.circular(3)),
                               ),
-                            ),
-                            const SizedBox(
-                              height: 6,
-                            ),
-                            Container(
-                              color: Colors.white,
                               width: MediaQuery.of(context).size.width / 2.3,
                               height:
-                                  0.25 * MediaQuery.of(context).size.height / 4,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                children: [
-                                  // const SizedBox(width: 5,),
-                                  Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Bread',
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 15))),
-                                      Text('Toast and Jam',
-                                          style: GoogleFonts.lato(
-                                              textStyle: TextStyle(
-                                                  color: Colors.grey[600],
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 10))),
-                                      Text('499 only',
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 10))),
-                                    ],
-                                  ),
-                                   (isLiked[1]==0? false : true) ? InkWell(onTap: (){
-                                    setState(() {
-                                      isLiked[1] = 0;
-                                    });
-                                  },
-                                  child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
-                                  InkWell(onTap: (){
-                                    setState(() {
-                                      isLiked[1] = 1;
-                                    });
-                                  },
-                                  child: const Icon(Icons.favorite_outline_rounded,),)
-                                ],
+                                  0.75 * MediaQuery.of(context).size.height / 4,
+                              child: Image.network(
+                                'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
+                                fit: BoxFit.cover,
+                                isAntiAlias: true,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Container(
+                            color: Colors.white,
+                            width: MediaQuery.of(context).size.width / 2.3,
+                            height:
+                                0.25 * MediaQuery.of(context).size.height / 4,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                // const SizedBox(width: 5,),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Bread',
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15))),
+                                    Text('Toast and Jam',
+                                        style: GoogleFonts.lato(
+                                            textStyle: TextStyle(
+                                                color: Colors.grey[600],
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 10))),
+                                    Text('499 only',
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 10))),
+                                  ],
+                                ),
+                                 (isLiked[1]==0? false : true) ? InkWell(onTap: (){
+                                  setState(() {
+                                    isLiked[1] = 0;
+                                  });
+                                },
+                                child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
+                                InkWell(onTap: (){
+                                  setState(() {
+                                    isLiked[1] = 1;
+                                  });
+                                },
+                                child: const Icon(Icons.favorite_outline_rounded,),)
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                      Card(
-                        elevation: 8,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(4),
-                                      topRight: Radius.circular(3)),
-                                ),
-                                width: MediaQuery.of(context).size.width / 2.3,
-                                height:
-                                    0.75 * MediaQuery.of(context).size.height / 4,
-                                child: Image.network(
-                                  'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
-                                  fit: BoxFit.cover,
-                                  isAntiAlias: true,
-                                ),
+                    ),
+                    Card(
+                      elevation: 8,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5.0),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(4),
+                                    topRight: Radius.circular(3)),
                               ),
-                            ),
-                            const SizedBox(
-                              height: 6,
-                            ),
-                            Container(
-                              color: Colors.white,
                               width: MediaQuery.of(context).size.width / 2.3,
                               height:
-                                  0.25 * MediaQuery.of(context).size.height / 4,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                children: [
-                                  // const SizedBox(width: 5,),
-                                  Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Bread',
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 15))),
-                                      Text('Toast and Jam',
-                                          style: GoogleFonts.lato(
-                                              textStyle: TextStyle(
-                                                  color: Colors.grey[600],
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 10))),
-                                      Text('499 only',
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 10))),
-                                    ],
-                                  ),
-                                   (isLiked[2]==0? false : true) ? InkWell(onTap: (){
-                                    setState(() {
-                                      isLiked[2] = 0;
-                                    });
-                                  },
-                                  child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
-                                  InkWell(onTap: (){
-                                    setState(() {
-                                      isLiked[2] = 1;
-                                    });
-                                  },
-                                  child: const Icon(Icons.favorite_outline_rounded,),)
-                                ],
+                                  0.75 * MediaQuery.of(context).size.height / 4,
+                              child: Image.network(
+                                'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
+                                fit: BoxFit.cover,
+                                isAntiAlias: true,
                               ),
                             ),
-                          ],
-                        ),
-                      ),    
-                      Card(
-                        elevation: 8,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Container(
-                                decoration: const BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(4),
-                                      topRight: Radius.circular(3)),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Container(
+                            color: Colors.white,
+                            width: MediaQuery.of(context).size.width / 2.3,
+                            height:
+                                0.25 * MediaQuery.of(context).size.height / 4,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                // const SizedBox(width: 5,),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Bread',
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15))),
+                                    Text('Toast and Jam',
+                                        style: GoogleFonts.lato(
+                                            textStyle: TextStyle(
+                                                color: Colors.grey[600],
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 10))),
+                                    Text('499 only',
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 10))),
+                                  ],
                                 ),
-                                width: MediaQuery.of(context).size.width / 2.3,
-                                height:
-                                    0.75 * MediaQuery.of(context).size.height / 4,
-                                child: Image.network(
-                                  'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
-                                  fit: BoxFit.cover,
-                                  isAntiAlias: true,
-                                ),
+                                 (isLiked[2]==0? false : true) ? InkWell(onTap: (){
+                                  setState(() {
+                                    isLiked[2] = 0;
+                                  });
+                                },
+                                child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
+                                InkWell(onTap: (){
+                                  setState(() {
+                                    isLiked[2] = 1;
+                                  });
+                                },
+                                child: const Icon(Icons.favorite_outline_rounded,),)
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),    
+                    Card(
+                      elevation: 8,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 5.0),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(4),
+                                    topRight: Radius.circular(3)),
                               ),
-                            ),
-                            const SizedBox(
-                              height: 6,
-                            ),
-                            Container(
-                              color: Colors.white,
                               width: MediaQuery.of(context).size.width / 2.3,
                               height:
-                                  0.25 * MediaQuery.of(context).size.height / 4,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                children: [
-                                  // const SizedBox(width: 5,),
-                                  Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text('Bread',
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 15))),
-                                      Text('Toast and Jam',
-                                          style: GoogleFonts.lato(
-                                              textStyle: TextStyle(
-                                                  color: Colors.grey[600],
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 10))),
-                                      Text('499 only',
-                                          style: GoogleFonts.lato(
-                                              textStyle: const TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 10))),
-                                    ],
-                                  ),
-                                   (isLiked[3]==0? false : true) ? InkWell(onTap: (){
-                                    setState(() {
-                                      isLiked[3] = 0;
-                                    });
-                                  },
-                                  child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
-                                  InkWell(onTap: (){
-                                    setState(() {
-                                      isLiked[3] = 1;
-                                    });
-                                  },
-                                  child: const Icon(Icons.favorite_outline_rounded,),)
-                                ],
+                                  0.75 * MediaQuery.of(context).size.height / 4,
+                              child: Image.network(
+                                'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
+                                fit: BoxFit.cover,
+                                isAntiAlias: true,
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                          const SizedBox(
+                            height: 6,
+                          ),
+                          Container(
+                            color: Colors.white,
+                            width: MediaQuery.of(context).size.width / 2.3,
+                            height:
+                                0.25 * MediaQuery.of(context).size.height / 4,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                // const SizedBox(width: 5,),
+                                Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Bread',
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15))),
+                                    Text('Toast and Jam',
+                                        style: GoogleFonts.lato(
+                                            textStyle: TextStyle(
+                                                color: Colors.grey[600],
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 10))),
+                                    Text('499 only',
+                                        style: GoogleFonts.lato(
+                                            textStyle: const TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 10))),
+                                  ],
+                                ),
+                                 (isLiked[3]==0? false : true) ? InkWell(onTap: (){
+                                  setState(() {
+                                    isLiked[3] = 0;
+                                  });
+                                },
+                                child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
+                                InkWell(onTap: (){
+                                  setState(() {
+                                    isLiked[3] = 1;
+                                  });
+                                },
+                                child: const Icon(Icons.favorite_outline_rounded,),)
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

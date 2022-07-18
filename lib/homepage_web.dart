@@ -15,10 +15,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  double xOffset = 0;
-  double yOffset = 0;
-  double scaleFactor = 1;
-  bool isDrawerOpen = false;
+  // double xOffset = 0;
+  // double yOffset = 0;
+  // double scaleFactor = 1;
+  // bool isDrawerOpen = false;
   int _current = 0;
   
   List<int> isLiked = [
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    widthS >=812 ? const SizedBox(width: 1,): SizedBox(),
+                    widthS >=812 ? const SizedBox(width: 1,): const SizedBox(),
                     
                     Text('B R O T C H E N 2 U',
                         style: GoogleFonts.lato(
@@ -87,9 +87,9 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 18))),
                    
-                Container(
+                widthS>=530 ? Container(
                 height: 50,
-                width: widthS * 0.49,
+                width: widthS * 0.5,
                 decoration: BoxDecoration(
                     color: Colors.blueGrey[100],
                     borderRadius: BorderRadius.circular(20)),
@@ -109,9 +109,11 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                            ),
+              ): const InkWell(
+                child: Icon(Icons.search),
+              ),
                     
-                    widthS>=812 ? Row(
+                    widthS>=840 ? Row(
                       children: [
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -122,10 +124,10 @@ class _HomePageState extends State<HomePage> {
                                   Icons.person_outline,
                                   color: Colors.grey,
                                 )),
-                            Text('Profile',style: TextStyle(color: Colors.grey, fontSize: 10),)
+                            const Text('Profile',style: TextStyle(color: Colors.grey, fontSize: 10),)
                           ],
                         ),
-                        SizedBox(width: 13,),
+                        const SizedBox(width: 13,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -135,10 +137,10 @@ class _HomePageState extends State<HomePage> {
                                   Icons.favorite_outline,
                                   color: Colors.grey,
                                 )),
-                            Text('Favourites',style: TextStyle(color: Colors.grey, fontSize: 10),)
+                            const Text('Favourites',style: TextStyle(color: Colors.grey, fontSize: 10),)
                           ],
                         ),
-                        SizedBox(width: 13,),
+                        const SizedBox(width: 13,),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -148,14 +150,14 @@ class _HomePageState extends State<HomePage> {
                                   Icons.shopping_cart,
                                   color: Colors.grey,
                                 )),
-                            Text('My Cart',style: TextStyle(color: Colors.grey, fontSize: 10),)
+                            const Text('My Cart',style: TextStyle(color: Colors.grey, fontSize: 10),)
                           ],
                           
                         ),
                         
                       ],
                     ): const SizedBox(),
-                    const SizedBox(width: 10,),
+                    widthS >=830 ? const SizedBox(width: 10,) : SizedBox() ,
                   ],
                 ),
               ),
@@ -336,22 +338,9 @@ class _HomePageState extends State<HomePage> {
               
               // Spacing
               const SizedBox(
-                height: 20,
+                height: 50,
               ),
               
-              // Categories
-              
-              // Spacing
-              const SizedBox(
-                height: 10,
-              ),
-              
-             
-              // Spacing
-              const SizedBox(
-                height: 20,
-              ),
-             
               // Most Consumed title
               Padding(
                 padding: const EdgeInsets.only(left: 10),
@@ -728,7 +717,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-              SizedBox(height: 60,),
+              const SizedBox(height: 60,),
 
 
               // About Us
