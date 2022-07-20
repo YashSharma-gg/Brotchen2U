@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(width: 60,),
+                    const SizedBox(width: 60,),
                     
                     Text('Location',
                         style: GoogleFonts.lato(

@@ -1,8 +1,11 @@
 
 
+import 'package:brotchen2u/custom_app_bar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'mostconsumed_tiles.dart';
 
 
 
@@ -68,100 +71,8 @@ class _HomePageState extends State<HomePage> {
 
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 70,
-          elevation: 4,
-          iconTheme: const IconThemeData(color: Colors.grey),
-            backgroundColor: Colors.white,
-            title: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 5),
-                child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    widthS >=812 ? const SizedBox(width: 1,): const SizedBox(),
-                    
-                    Text('B R O T C H E N 2 U',
-                        style: GoogleFonts.lato(
-                            textStyle: const TextStyle(
-                                color: Colors.black54,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18))),
-                   
-                widthS>=530 ? Container(
-                height: 50,
-                width: widthS * 0.5,
-                decoration: BoxDecoration(
-                    color: Colors.blueGrey[100],
-                    borderRadius: BorderRadius.circular(20)),
-                child: TextField(
-                  decoration: InputDecoration(
-                    enabledBorder: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    hintText: 'Search "Bread"',
-                    hintStyle: GoogleFonts.lato(
-                        textStyle: const TextStyle(
-                            color: Colors.black38,
-                            fontWeight: FontWeight.bold)),
-                    prefixIcon: const Icon(Icons.search),
-                    prefixIconColor: Colors.black54,
-                    contentPadding: EdgeInsets.symmetric(
-                      vertical: MediaQuery.of(context).size.height / 50,
-                    ),
-                  ),
-                ),
-              ): const InkWell(
-                child: Icon(Icons.search),
-              ),
-                    
-                    widthS>=840 ? Row(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {print(widthS);},
-                                icon: const Icon(
-                                  Icons.person_outline,
-                                  color: Colors.grey,
-                                )),
-                            const Text('Profile',style: TextStyle(color: Colors.grey, fontSize: 10),)
-                          ],
-                        ),
-                        const SizedBox(width: 13,),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.favorite_outline,
-                                  color: Colors.grey,
-                                )),
-                            const Text('Favourites',style: TextStyle(color: Colors.grey, fontSize: 10),)
-                          ],
-                        ),
-                        const SizedBox(width: 13,),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.shopping_cart,
-                                  color: Colors.grey,
-                                )),
-                            const Text('My Cart',style: TextStyle(color: Colors.grey, fontSize: 10),)
-                          ],
-                          
-                        ),
-                        
-                      ],
-                    ): const SizedBox(),
-                    widthS >=830 ? const SizedBox(width: 10,) : SizedBox() ,
-                  ],
-                ),
-              ),
-        ),
+        appBar: const CustomAppBar(),
+        
         drawer: const Drawer(),
         drawerScrimColor: Colors.grey,
         // Navigation Bar
@@ -201,7 +112,7 @@ class _HomePageState extends State<HomePage> {
                               widthS>=911 ? Padding(
                                 padding: const EdgeInsets.only(left: 10 ),
                                 child: Expanded(child: Text('Category 1', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)),
-                              ): SizedBox()
+                              ): const SizedBox()
                             ]
                           ),
                         ),
@@ -224,7 +135,7 @@ class _HomePageState extends State<HomePage> {
                               widthS>=911 ? Padding(
                                 padding: const EdgeInsets.only(left: 10 ),
                                 child: Expanded(child: Text('Category 1', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)),
-                              ): SizedBox()
+                              ): const SizedBox()
                             ]
                           ),
                         ),
@@ -247,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                               widthS>=911 ? Padding(
                                 padding: const EdgeInsets.only(left: 10 ),
                                 child: Expanded(child: Text('Category 1', style: GoogleFonts.lato(textStyle: TextStyle(color: Colors.orange[400])),)),
-                              ): SizedBox()
+                              ): const SizedBox()
                             ]
                           ),
                         ),
@@ -367,352 +278,12 @@ class _HomePageState extends State<HomePage> {
                 height: 300,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
-                  children: [
-                    Expanded(
-                      child: Card(
-                        
-                        elevation: 8,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Expanded(
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(4),
-                                        topRight: Radius.circular(3)),
-                                  ),
-                                  width: MediaQuery.of(context).size.width / 4,
-                                  height:
-                                      200,
-                                  child: Image.network(
-                                    'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
-                                    fit: BoxFit.cover,
-                                    isAntiAlias: true,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 6,
-                            ),
-                            Expanded(
-                              child: Container(
-                                color: Colors.white,
-                                width: MediaQuery.of(context).size.width / 4,
-                                height:
-                                   200,
-                                child: Row(
-                                  
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: [
-                                    
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Bread',
-                                            style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 15))),
-                                        Text('Toast and Jam',
-                                            style: GoogleFonts.lato(
-                                                textStyle: TextStyle(
-                                                    color: Colors.grey[600],
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 10))),
-                                        Text('499 only',
-                                            style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 10))),
-                                      ],
-                                    ),
-                                                    
-                                    
-                                    (isLiked[0]==0? false : true) ? InkWell(onTap: (){
-                                      setState(() {
-                                        isLiked[0] = 0;
-                                      });
-                                    },
-                                    child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
-                                    InkWell(onTap: (){
-                                      setState(() {
-                                        isLiked[0] = 1;
-                                      });
-                                    },
-                                    child: const Icon(Icons.favorite_outline_rounded,),)
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Card(
-                        elevation: 8,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Expanded(
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(4),
-                                        topRight: Radius.circular(3)),
-                                  ),
-                                  width: MediaQuery.of(context).size.width / 4,
-                                  height:
-                                      200,
-                                  child: Image.network(
-                                    'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
-                                    fit: BoxFit.cover,
-                                    isAntiAlias: true,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 6,
-                            ),
-                            Expanded(
-                              child: Container(
-                                color: Colors.white,
-                                width: MediaQuery.of(context).size.width / 4,
-                                height:
-                                   200,
-                                child: Row(
-                                  
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: [
-                                    
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Bread',
-                                            style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 15))),
-                                        Text('Toast and Jam',
-                                            style: GoogleFonts.lato(
-                                                textStyle: TextStyle(
-                                                    color: Colors.grey[600],
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 10))),
-                                        Text('499 only',
-                                            style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 10))),
-                                      ],
-                                    ),
-                                                    
-                                    
-                                    (isLiked[0]==0? false : true) ? InkWell(onTap: (){
-                                      setState(() {
-                                        isLiked[0] = 0;
-                                      });
-                                    },
-                                    child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
-                                    InkWell(onTap: (){
-                                      setState(() {
-                                        isLiked[0] = 1;
-                                      });
-                                    },
-                                    child: const Icon(Icons.favorite_outline_rounded,),)
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Card(
-                        elevation: 8,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Expanded(
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(4),
-                                        topRight: Radius.circular(3)),
-                                  ),
-                                  width: MediaQuery.of(context).size.width / 4,
-                                  height:
-                                      200,
-                                  child: Image.network(
-                                    'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
-                                    fit: BoxFit.cover,
-                                    isAntiAlias: true,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 6,
-                            ),
-                            Expanded(
-                              child: Container(
-                                color: Colors.white,
-                                width: MediaQuery.of(context).size.width / 4,
-                                height:
-                                   200,
-                                child: Row(
-                                  
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: [
-                                    
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Bread',
-                                            style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 15))),
-                                        Text('Toast and Jam',
-                                            style: GoogleFonts.lato(
-                                                textStyle: TextStyle(
-                                                    color: Colors.grey[600],
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 10))),
-                                        Text('499 only',
-                                            style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 10))),
-                                      ],
-                                    ),
-                                                    
-                                    
-                                    (isLiked[0]==0? false : true) ? InkWell(onTap: (){
-                                      setState(() {
-                                        isLiked[0] = 0;
-                                      });
-                                    },
-                                    child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
-                                    InkWell(onTap: (){
-                                      setState(() {
-                                        isLiked[0] = 1;
-                                      });
-                                    },
-                                    child: const Icon(Icons.favorite_outline_rounded,),)
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Card(
-                        elevation: 8,
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 5.0),
-                              child: Expanded(
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(4),
-                                        topRight: Radius.circular(3)),
-                                  ),
-                                  width: MediaQuery.of(context).size.width / 4,
-                                  height:
-                                      200,
-                                  child: Image.network(
-                                    'https://upload.wikimedia.org/wikipedia/commons/3/33/Fresh_made_bread_05.jpg',
-                                    fit: BoxFit.cover,
-                                    isAntiAlias: true,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 6,
-                            ),
-                            Expanded(
-                              child: Container(
-                                color: Colors.white,
-                                width: MediaQuery.of(context).size.width / 4,
-                                height:
-                                   200,
-                                child: Row(
-                                  
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                  children: [
-                                    
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Bread',
-                                            style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 15))),
-                                        Text('Toast and Jam',
-                                            style: GoogleFonts.lato(
-                                                textStyle: TextStyle(
-                                                    color: Colors.grey[600],
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 10))),
-                                        Text('499 only',
-                                            style: GoogleFonts.lato(
-                                                textStyle: const TextStyle(
-                                                    color: Colors.black,
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 10))),
-                                      ],
-                                    ),
-                                                    
-                                    
-                                    (isLiked[0]==0? false : true) ? InkWell(onTap: (){
-                                      setState(() {
-                                        isLiked[0] = 0;
-                                      });
-                                    },
-                                    child: const Icon(Icons.favorite_rounded,color: Colors.red,),):
-                                    InkWell(onTap: (){
-                                      setState(() {
-                                        isLiked[0] = 1;
-                                      });
-                                    },
-                                    child: const Icon(Icons.favorite_outline_rounded,),)
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                  children: const [
+                    MostConsumedTiles(),
+                    MostConsumedTiles(),
+                    MostConsumedTiles(),
+                    MostConsumedTiles(),
+                    MostConsumedTiles()
                   ],
                 ),
               ),
@@ -723,11 +294,11 @@ class _HomePageState extends State<HomePage> {
               // About Us
               Container(
                 alignment: Alignment.topCenter ,
-                padding: EdgeInsets.only(top: 30),
-                decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)), color: Colors.grey[600]),
+                padding: const EdgeInsets.only(top: 30),
+                decoration: BoxDecoration(borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)), color: Colors.grey[600]),
                 height: 600,
                 width: widthS,
-                child: Text('A B O U T  U S', style: GoogleFonts.abel(textStyle: TextStyle(color: Colors.white, fontWeight:FontWeight.bold, fontSize: 40 )),),
+                child: Text('A B O U T  U S', style: GoogleFonts.abel(textStyle: const TextStyle(color: Colors.white, fontWeight:FontWeight.bold, fontSize: 40 )),),
               )
 
             ],
@@ -737,3 +308,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+

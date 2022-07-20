@@ -1,5 +1,4 @@
 import 'package:brotchen2u/custom_app_bar.dart';
-import 'package:brotchen2u/product_cards.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -79,18 +78,18 @@ class _Category_WebState extends State<CategoryWeb> {
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: _widthS>= 768 ? 4 : (_widthS>=535 && _widthS<768) ? 3 : 2 , mainAxisExtent: MediaQuery.of(context).size.height/(MediaQuery.of(context).size.height >= 240 ? 2.5 : 1.8)),
                         padding: const EdgeInsets.all(8),
                         children: [
-                          CategoryBuilder(widthS: _widthS, name: 'Category 1', title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 2',title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 3',title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 4',title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 5',title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 6',title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 7',title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 8',title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 9',title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 10',title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 11',title: true,),
-                          CategoryBuilder(widthS: _widthS, name: 'Category 12',title: true,),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 1',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 2',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 3',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 4',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 5',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 6',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 7',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 8',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 9',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 10',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 11',),
+                          CategoryBuilder(widthS: _widthS, name: 'Category 12',),
                         ],
                         ),
                     );
@@ -303,3 +302,37 @@ class _Category_WebState extends State<CategoryWeb> {
   }
 }
 
+class CategoryBuilder extends StatelessWidget {
+  const CategoryBuilder({
+    Key? key,
+    required double widthS,
+    required this.name,
+    this.route = '',
+  }) : _widthS = widthS, super(key: key);
+
+  final double _widthS;
+  final String name;
+  final String route;
+
+  @override
+  Widget build(BuildContext context) {
+    double _heightS = MediaQuery.of(context).size.height;
+    return InkWell(
+      onTap: (){print(MediaQuery.of(context).size.height);},
+      child: Column(
+        children: [
+          Container(
+            alignment: Alignment.center,
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.blue[300]),
+            height: MediaQuery.of(context).size.height/3,
+            width: _widthS>768?_widthS/5: _widthS<768 && _widthS > 535 ? _widthS/4: _widthS/3,
+            child:  Text(name, style:  TextStyle(color: Colors.white, fontSize: (_widthS>768 ? 30:20 ))),
+          ),
+          
+          _heightS>=540 ? const SizedBox(height: 20,): SizedBox(),
+          _heightS>=540 ?Text(name) : Text('')
+        ],
+      ),
+    );
+  }
+}
