@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import 'button.dart';
 import 'mostconsumed_tiles.dart';
 
 class ProductPageWeb extends StatefulWidget {
@@ -113,7 +114,7 @@ class _ProductPageWebState extends State<ProductPageWeb> {
                           SizedBox(height: 32),
                           BuyButton(widthS: _widthS, name: 'Add to cart', colors: Colors.green,),
                           SizedBox(height: 16),
-                          BuyButton(widthS: _widthS, name: 'Wishlist', colors: Colors.green,),
+                          BuyButton(widthS: _widthS, name: 'Wishlist', colors: Colors.green,)
                         ],
                                           )
                           ],
@@ -179,40 +180,7 @@ class _ProductPageWebState extends State<ProductPageWeb> {
   }
 }
 
-class BuyButton extends StatelessWidget {
-  const BuyButton({
-    Key? key,
-    required double widthS,
-    required this.name,
 
-    this.colors = Colors.white
-  }) : _widthS = widthS, super(key: key);
-
-  final double _widthS;
-  final String name;
-  final Color colors;
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: (){print(_widthS);},
-      child: Container(
-        alignment: Alignment.center,
-        height: 80,
-        width: _widthS>=1280?300 :_widthS>=872 && _widthS<1280 ?200 : 150,
-        decoration: BoxDecoration(
-          color: colors,
-          borderRadius: BorderRadius.circular(15)
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(name,style: TextStyle( color: Colors.white),),
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 class Product_Image extends StatelessWidget {
   const Product_Image({
