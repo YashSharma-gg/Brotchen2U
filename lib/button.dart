@@ -3,31 +3,41 @@ import 'package:flutter/material.dart';
 class BuyButton extends StatelessWidget {
   const BuyButton({
     Key? key,
-    required double widthS,
+    
     required this.name,
     this.height,
-    this.colors
-  }) : _widthS = widthS, super(key: key);
+    this.color,
+    this.icons,
+    this.width,
+    this.colorText,
+    this.onTap,
+    
+  }) :  super(key: key);
 
-  final double _widthS;
+  final double ?width;
   final String name;
-  final Color ?colors ;
+  final Color ?color ;
   final double ?height;
+  final Icon ?icons;
+  final Color ?colorText;
+  final GestureTapCallback ?onTap;
   @override
   Widget build(BuildContext context) {
+    final double _widthS = MediaQuery.of(context).size.width;
     return InkWell(
-      onTap: (){},
+      onTap: onTap,
       child: Container(
         alignment: Alignment.center,
         height: height ?? 80,
-        width: _widthS>=1280?300 :_widthS>=872 && _widthS<1280 ?200 : 150,
+        width: width ?? (_widthS>=1280?300 :_widthS>=872 && _widthS<1280 ?200 : 150),
         decoration: BoxDecoration(
-          color: colors ?? Colors.orange,
+          color: color ?? Colors.orange,
           borderRadius: BorderRadius.circular(15)
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            icons ?? SizedBox(),
             Text(name,style: const TextStyle( color: Colors.white),),
           ],
         ),

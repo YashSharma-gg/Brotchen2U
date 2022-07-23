@@ -1,13 +1,13 @@
 
 import 'package:brotchen2u/custom_app_bar.dart';
-import 'package:brotchen2u/product_cards.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+
 
 import 'button.dart';
-import 'mostconsumed_tiles.dart';
+import 'tiles_and_cards_of_products.dart';
 
 class ProductPageWeb extends StatefulWidget {
   const ProductPageWeb({Key? key}) : super(key: key);
@@ -71,9 +71,9 @@ class _ProductPageWebState extends State<ProductPageWeb> {
                         SizedBox(height: 8),
                         Text('\$99.99',style: TextStyle(fontSize: _widthS>=1280?30:_widthS>=872 && _widthS<1280 ?20 : 15, color: Colors.grey[800]),),
                         SizedBox(height: 32),
-                        BuyButton(widthS: _widthS, name: 'Add to cart', colors: Colors.green,),
+                        BuyButton(name: 'Add to cart', color: Colors.green,),
                         SizedBox(height: 16),
-                        BuyButton(widthS: _widthS, name: 'Wishlist', colors: Colors.green,),
+                        BuyButton(name: 'Wishlist', color: Colors.green,),
                       ],
                     )
                         ],
@@ -112,9 +112,9 @@ class _ProductPageWebState extends State<ProductPageWeb> {
                           SizedBox(height: 8),
                           Text('\$99.99',style: TextStyle(fontSize: 20, color: Colors.grey[800]),),
                           SizedBox(height: 32),
-                          BuyButton(widthS: _widthS, name: 'Add to cart', colors: Colors.green,),
+                          BuyButton( name: 'Add to cart', color: Colors.green,),
                           SizedBox(height: 16),
-                          BuyButton(widthS: _widthS, name: 'Wishlist', colors: Colors.green,)
+                          BuyButton( name: 'Wishlist', color: Colors.green,)
                         ],
                                           )
                           ],

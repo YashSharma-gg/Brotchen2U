@@ -1,5 +1,6 @@
 import 'package:brotchen2u/custom_app_bar.dart';
-import 'package:brotchen2u/product_cards.dart';
+import 'package:brotchen2u/tiles_and_cards_of_products.dart';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

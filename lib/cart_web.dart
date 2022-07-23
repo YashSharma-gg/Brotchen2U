@@ -1,8 +1,13 @@
 import 'package:brotchen2u/about_us.dart';
-import 'package:brotchen2u/button.dart';
+
 import 'package:brotchen2u/custom_app_bar.dart';
+import 'package:brotchen2u/tiles_and_cards_of_products.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'button.dart';
+
+
 
 class OrderPageWeb extends StatefulWidget {
   const OrderPageWeb({Key? key}) : super(key: key);
@@ -50,10 +55,10 @@ class _OrderPageWebState extends State<OrderPageWeb> {
                                    const SizedBox(height: 24,),
                                   const CartProducts(
                                     name: 'Product 1',
-                                    price: '\$99',
+                                    price: 99,
                                     color: Colors.amber,
                                   ),
-                                  const CartProducts(name: 'Product 2', price: '\$59', color: Colors.amber)
+                                  const CartProducts(name: 'Product 2', price: 69, color: Colors.amber)
                                  
                                 ]),
                               ),
@@ -87,7 +92,7 @@ class _OrderPageWebState extends State<OrderPageWeb> {
                                 SizedBox(height: 16,),
                                 PriceDetails(name: 'Total Price', price: '\$306'),  
                                 SizedBox(height: 16,),
-                                Center(child: BuyButton(widthS: _widthS, name: 'Continue', colors: Colors.orange,height: 60,))
+                                Center(child: BuyButton( name: 'Continue', color: Colors.orange,height: 60,))
                               ],
                             ),
                           ),
@@ -113,10 +118,10 @@ class _OrderPageWebState extends State<OrderPageWeb> {
                                  const SizedBox(height: 24,),
                                 const CartProducts(
                                   name: 'Product 1',
-                                  price: '\$99',
+                                  price: 99,
                                   color: Colors.amber,
                                 ),
-                                const CartProducts(name: 'Product 2', price: '\$59', color: Colors.amber)
+                                const CartProducts(name: 'Product 2', price: 69, color: Colors.amber)
                                
                               ]),
                             ),
@@ -149,7 +154,7 @@ class _OrderPageWebState extends State<OrderPageWeb> {
                                 SizedBox(height: 16,),
                                 PriceDetails(name: 'Total Price', price: '\$306'),
                                 SizedBox(height: 16,),
-                                Center(child: BuyButton(widthS: _widthS, name: 'Continue', colors: Colors.orange,height: 60,))
+                                Center(child: BuyButton(name: 'Continue', color: Colors.orange,height: 60,))
                       
                               ],
                             ),
@@ -174,130 +179,10 @@ class _OrderPageWebState extends State<OrderPageWeb> {
 
 
 
-// PRICE DETAILS
-class PriceDetails extends StatelessWidget {
-  const PriceDetails({
-    Key? key,
-    required this.name,
-    required this.price,
-  }) : super(key: key);
-  final String name;
-  final String price;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(name, style: TextStyle(color: Colors.grey[600], fontSize: 20,)),
-            Text(price, style: TextStyle(color: Colors.grey[500], fontSize: 20, )),
-          ],
-        ),
-        const SizedBox(height: 16,),
-      ],
-    );
-  }
-}
 
 
 
 
 
 
-// CART PRODUCTS
-class CartProducts extends StatelessWidget {
-  const CartProducts(
-      {Key? key, required this.name, required this.price, required this.color})
-      : super(key: key);
 
-  final String name;
-  final String price;
-  final Color color;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24.0),
-      child: Container(
-        decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.black12), borderRadius: BorderRadius.circular(15)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                alignment: Alignment.center,
-                width: 150,
-                height: 150,
-                decoration: BoxDecoration(
-                    color: color, borderRadius: BorderRadius.circular(10)),
-                child: Text(name, style: TextStyle(color: Colors.white)),
-              ),
-            ),
-            Column(
-              children: [Text(name, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),SizedBox(height: 16,), Text(price)],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: 20,
-                        height: 20,
-                        decoration: BoxDecoration(
-                            color: Colors.orange[300],
-                            borderRadius: BorderRadius.circular(10)),
-                        child: const Icon(
-                          Icons.remove,
-                          color: Colors.white,
-                          size: 15,
-                        ),
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Text('1'),
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: 20,
-                        height: 20,
-                        decoration: BoxDecoration(
-                            color: Colors.orange[300],
-                            borderRadius: BorderRadius.circular(10)),
-                        child: const Icon(
-                          Icons.add,
-                          color: Colors.white,
-                          size: 15,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(width: 32),
-                Padding(
-              padding: const EdgeInsets.only(right: 16.0),
-              child: InkWell(
-                onTap: (){},
-                
-                child: Icon(Icons.remove_circle_outline, color: Colors.grey[600],),
-              ),
-            )
-              ],
-            ),
-            
-            
-          ],
-        ),
-      ),
-    );
-  }
-}
