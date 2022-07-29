@@ -2,6 +2,7 @@
 import 'package:brotchen2u/Mobile/profile_page.dart';
 import 'package:brotchen2u/category_web.dart';
 import 'package:brotchen2u/product_page_web.dart';
+import 'package:brotchen2u/profile_page_web.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -24,5 +25,5 @@ class MyCustomScroll extends MaterialScrollBehavior{
 
 
 void main(List<String> args) {
-  runApp( MaterialApp(home: ProfilePage(), scrollBehavior: MyCustomScroll(),));
+  runApp( MaterialApp(home: ProfilePageWeb(), scrollBehavior: MyCustomScroll(),));
 }
